@@ -45,12 +45,13 @@ public class Modelo implements ICrud<Persona> {
 		}
 		return null;
 	}
-
+	
+	
 	@Override
 	public List<Persona> ReadAll() {
 		return mod;
 	}
 	
-	
+			
 
 }
