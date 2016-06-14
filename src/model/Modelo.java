@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Modelo implements ICrud<Persona> {
+
 	private List<Persona> mod = new ArrayList<>();
-		
+	
 	@Override
 	public void create(Persona t) {
 		if(find(Integer.parseInt(t.getDni())) == null){
@@ -44,10 +45,13 @@ public class Modelo implements ICrud<Persona> {
 		}
 		return null;
 	}
-
+	
+	
 	@Override
 	public List<Persona> ReadAll() {
 		return mod;
 	}
+	
+			
 
 }
