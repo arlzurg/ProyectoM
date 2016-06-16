@@ -76,13 +76,18 @@ public class Modelo implements ICrud<Persona> {
                 while (datos != null) {
                     Persona p = new Persona();
                     StringTokenizer token = new StringTokenizer(datos, ",");
-                    // asignar valores al objeto alu
+                    // asignar valores al objeto 
                     p.setDni(token.nextToken());
                     p.setNombres(token.nextToken());
                     p.setApellidos(token.nextToken());
                     p.setSexo(token.nextToken());
+                    p.setEdad(Integer.parseInt(token.nextToken()));
                     p.setFecNac(formato.parse(token.nextToken()));
                     //agregar objeto alu a la coleccion
+                    p.setDni(p.getDni().replace("\"", ""));
+                    p.setNombres(p.getNombres().replace("\"", ""));
+                    p.setApellidos(p.getApellidos().replace("\"", ""));
+                    p.setSexo(p.getSexo().replace("\"", ""));
                     lista.add(p);
                     datos = br.readLine();
                 }
