@@ -1,7 +1,5 @@
 package model;
 
-<<<<<<< HEAD
-=======
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -10,7 +8,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
->>>>>>> refs/remotes/origin/Hecty
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
@@ -18,11 +15,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Modelo implements ICrud<Persona> {
-<<<<<<< HEAD
-
-	private List<Persona> mod = new ArrayList<>();
-	
-=======
 	private List<Persona> mod = new ArrayList<>();
             File f = null;
             FileWriter fw = null;
@@ -33,7 +25,6 @@ public class Modelo implements ICrud<Persona> {
             String temporal = "Temporal.txt";
             String datos = "";
 		
->>>>>>> refs/remotes/origin/Hecty
 	@Override
 	public void create(Persona t) {
 		if(find(Integer.parseInt(t.getDni())) == null){
@@ -70,16 +61,6 @@ public class Modelo implements ICrud<Persona> {
 		}
 		return null;
 	}
-<<<<<<< HEAD
-	
-	
-	@Override
-	public List<Persona> ReadAll() {
-		return mod;
-	}
-	
-			
-=======
         
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
 	@Override
@@ -128,6 +109,5 @@ public class Modelo implements ICrud<Persona> {
             }
             return lista;
             }
->>>>>>> refs/remotes/origin/Hecty
 
 }
