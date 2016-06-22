@@ -1,4 +1,4 @@
-package moquiproject;
+package view;
 
 import controller.ControlDePersona;
 
