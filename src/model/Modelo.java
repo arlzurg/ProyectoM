@@ -1,21 +1,9 @@
 package model;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> refs/remotes/origin/alejandro
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-<<<<<<< HEAD
-import java.io.PrintWriter;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
->>>>>>> refs/remotes/origin/Hecty
-=======
->>>>>>> refs/remotes/origin/alejandro
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -24,30 +12,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Modelo implements ICrud<Persona> {
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-	private List<Persona> mod = new ArrayList<>();
-	
-=======
-	private List<Persona> mod = new ArrayList<>();
-            File f = null;
-            FileWriter fw = null;
-            FileReader fr = null;
-             BufferedReader br = null;
-            PrintWriter pw = null;
-            String archivo = "Personas.txt";
-            String temporal = "Temporal.txt";
-            String datos = "";
-		
->>>>>>> refs/remotes/origin/Hecty
-	@Override
-	public void create(Persona t) {
-		if(find(Integer.parseInt(t.getDni())) == null){
-			mod.add(t);
-		}
-	}
-=======
     
     private List<Persona> mod = new ArrayList<>();
     File f = null;
@@ -55,7 +19,6 @@ public class Modelo implements ICrud<Persona> {
     BufferedReader br = null;
     String archivo = "Personas.csv";
     String datos = "";
->>>>>>> refs/remotes/origin/alejandro
 
     public Modelo(String a) {
         this.archivo = a;
@@ -83,37 +46,6 @@ public class Modelo implements ICrud<Persona> {
     }    
 
 	@Override
-<<<<<<< HEAD
-	public Persona find(int t) {
-		for( Persona a:mod ){
-			if(Integer.parseInt(a.getDni()) == t){
-				return a;
-			}
-		}
-		return null;
-	}
-<<<<<<< HEAD
-	
-	
-	@Override
-	public List<Persona> ReadAll() {
-		return mod;
-	}
-	
-			
-=======
-        
-        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-	@Override
-	public List<Persona> ReadAll() {
-	List<Persona> lista = new ArrayList<>();
-            try {
-                //abrir archivo para lectura
-                fr = new FileReader(archivo);
-                //objeto para leer dato del archivo
-                br = new BufferedReader(fr);
-                // lee el primer dato del archivo
-=======
 	public void ReadFile() {
 		mod.clear();
         try {
@@ -146,7 +78,6 @@ public class Modelo implements ICrud<Persona> {
 						}							
 					}
 				}
->>>>>>> refs/remotes/origin/alejandro
                 datos = br.readLine();
             }
             br.close();
@@ -281,13 +212,9 @@ public class Modelo implements ICrud<Persona> {
                 }
                 mod.set(inner, temp);
             }
-<<<<<<< HEAD
->>>>>>> refs/remotes/origin/Hecty
-=======
             h = (h - 1) / 3;
         }
     }
->>>>>>> refs/remotes/origin/alejandro
 
     @SuppressWarnings("deprecation")
 	@Override
