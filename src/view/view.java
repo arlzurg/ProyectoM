@@ -11,6 +11,7 @@ import javax.swing.JTable;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 import model.Persona;
+import model.ValidadorPersona;
 
 @SuppressWarnings("serial")
 public class view extends javax.swing.JFrame {
@@ -75,7 +76,12 @@ public class view extends javax.swing.JFrame {
         btn2.setText("Validar");
         btn2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn2ActionPerformed(evt);
+                try {
+					btn2ActionPerformed(evt);
+				} catch (Exception e) {
+	
+					e.printStackTrace();
+				}
             }
         });
 
@@ -254,8 +260,13 @@ public class view extends javax.swing.JFrame {
         }        
     }
 
-    private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, "NO IMPLEMENTADO");
+    private void btn2ActionPerformed(java.awt.event.ActionEvent evt) throws Exception {
+        ValidadorPersona vali = new ValidadorPersona(obj.PersonaListar());
+        vali.Validar();
+        vali.ArchivarErrores();
+        vali.ArchivarInvalidos();
+        vali.ArchivarErrores();
+        JOptionPane.showMessageDialog(null, "LISTO");
     }
 
     private void btnNombresActionPerformed(java.awt.event.ActionEvent evt) {        
